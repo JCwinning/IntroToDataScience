@@ -28,6 +28,10 @@
 train <- read.csv("train.csv", header = TRUE)
 test <- read.csv("test.csv", header = TRUE)
 
+# change all the header to lowercase
+names(train)=tolower(names(train))
+names(test)=tolower(names(test))
+
 # Add a "Survived" variable to the test set to allow for combining data sets
 test.survived <- data.frame(survived = rep("None", nrow(test)), test[,])
 
